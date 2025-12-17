@@ -1,24 +1,17 @@
-import React from "react";
-import { useState } from "react";
+import React from 'react'
+import { useState } from 'react'
 
-function App() {
-  const [isPassword, setIsPassword] = useState(true);
+const App = () => {
+  const [inputValue, setInputValue] = useState("")
   return (
-    <div className="bg-fuchsia-400 h-screen w-screen flex justify-center items-center rounded">
-      <div className="bg-blue-300 p-2 rounded shadow-lg ">
-        <input
-          type={isPassword ? "password" : "text"}
-          placeholder="Enter your password"
-        />
-        <span
-          onClick={() => setIsPassword(!isPassword)}
-          className="cursor-pointer"
-        >
-          {isPassword ? "show" : "hide"}
-        </span>
+    <div className='bg-gray-500 h-screen w-screen flex justify-center-safe items-center'>
+      <div className='bg-cyan-100 p-2 rounded shadow-md'>
+        <input type="text" className='bg-gray-400 rounded' placeholder='Enter your text' onChange={(e)=>setInputValue(e.target.value)}/>
+        <p >your text will show here:-{inputValue}</p>
       </div>
+      
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
